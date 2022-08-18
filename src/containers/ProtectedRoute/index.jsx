@@ -3,7 +3,6 @@
 import { RouteProps, Navigate } from 'react-router-dom';
 import useStore from '@/store';
 import shallow from 'zustand/shallow';
-import { memo } from 'react';
 
 type ProtectedRouteProps = RouteProps & {};
 const ProtectedRoute = (props: ProtectedRouteProps) => {
@@ -31,4 +30,4 @@ const ProtectedRoute = (props: ProtectedRouteProps) => {
   return children;
 };
 
-export default memo(ProtectedRoute);
+export default ProtectedRoute;

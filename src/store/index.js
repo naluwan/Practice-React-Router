@@ -40,14 +40,13 @@ const useStore = create((set) => {
     },
     onLogin(email: string, password: string) {
       set({ loading: true });
-      fetchLogin(email, password)
-        .then((response) => {
-          console.log('設定user');
-          set({ user: response.user });
-        })
-        .finally(() => {
-          set({ loading: false });
-        });
+      fetchLogin(email, password).then((response) => {
+        console.log('設定user');
+        set({ user: response.user, loading: false });
+      });
+      // .finally(() => {
+      //   set({ loading: false });
+      // });
     },
     onLogout() {
       cleanToken();
